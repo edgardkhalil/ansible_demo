@@ -1,3 +1,2 @@
-ec2-54-163-129-240.compute-1.amazonaws.com
-ec2-54-175-177-210.compute-1.amazonaws.com
-ec2-54-161-195-87.compute-1.amazonaws.com
+ec2-54-163-129-240.compute-1.amazonaws.com ansible_user=ubuntu 
+ec2-3-83-156-236.compute-1.amazonaws.com ansible_user=ec2-user
