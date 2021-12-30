@@ -1,2 +1,2 @@
-ec2-54-163-129-240.compute-1.amazonaws.com ansible_user=ubuntu 
-ec2-3-83-156-236.compute-1.amazonaws.com ansible_user=ec2-user
+ec2-54-163-129-240.compute-1.amazonaws.com ansible_user=ubuntu apache_package=apache2 php_package=libapache2-mod-php
+ec2-3-83-156-236.compute-1.amazonaws.com ansible_user=ec2-user apache_package=httpd php_package=php
