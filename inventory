@@ -1,9 +1,13 @@
 [web_servers]
-ec2-54-163-129-240.compute-1.amazonaws.com ansible_user=ubuntu
-ec2-3-83-156-236.compute-1.amazonaws.com ansible_user=ec2-user
+ec2-52-90-76-39.compute-1.amazonaws.com 
+ec2-3-83-67-245.compute-1.amazonaws.com
 
 [db_servers]
-ec2-35-171-153-114.compute-1.amazonaws.com ansible_user=ubuntu
+ec2-34-203-218-60.compute-1.amazonaws.com
 
 [file_servers]
-ec2-3-83-109-69.compute-1.amazonaws.com ansible_user=ubuntu
+ec2-54-83-154-103.compute-1.amazonaws.com
+
+[workstations]
+
+

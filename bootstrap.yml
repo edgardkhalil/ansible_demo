@@ -1,0 +1,49 @@
+---
+# Installs updates on RedHat and Ubuntu Servers. 
+
+- hosts: all
+  become: true
+  pre_tasks:
+    - name: install updates (RedHat)
+      tags: always
+      dnf:
+        update_only: 'yes'
+        update_cache: 'yes'
+      when: ansible_distribution == "RedHat"
+    - name: install updates (Ubuntu)
+      tags: always
+      apt:
+        upgrade: dist
+        update_cache: 'yes'
+      when: ansible_distribution == "Ubuntu"
+
+
+
+#Creates dev user on all servers and assigns it to the root group
+
+- hosts: all
+  become: true
+  tasks:
+  
+  - name: create dev user
+    tags: always
+    user:
+      name: dev
+      groups: root
+      
+
+  - name: add ssh key
+    tags: always
+    authorized_key:
+      user: dev
+      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCGdp6qKwuTl0PXAXeJXjUSsNZ3Myg5v73EW9A42TS7ZIKJfn/hpekgvGMBVcfRf05McqMPH/emIXOjC0N/ErvJ+sC5ixMeRB7fueH9e6my/WPZVoAopw+Xh9vxbgEqsKwEgPwukeVJAFam4Xdm/NZBMMlV3YH+OW0E2tOGZHo/EMYGSNUXm591DwChVWemqBJ4Hom5Ms3geIZdggoggUwNGl4lDDdp9OXjEP7kMFmfLNv1JULDRW1cerB6xpzyn/BMBLK1zsY9RVH1CTjSWQJwVvz/B9HDumosDPVI0fx9b7gM7LfOOTw0E4Nvn02YbUlxkEXcNN0IulgztzYxHSnd"
+
+
+  - name: add sudoers file for dev
+    tags: always
+    copy:
+      src: sudoer_dev
+      dest: /etc/sudoers.d/dev
+      owner: root
+      group: root
+      mode: 0440
