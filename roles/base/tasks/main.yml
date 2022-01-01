@@ -1,0 +1,5 @@
+- name: add ssh key for dev
+  authorized_key:
+      user: dev
+      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCGdp6qKwuTl0PXAXeJXjUSsNZ3Myg5v73EW9A42TS7ZIKJfn/hpekgvGMBVcfRf05McqMPH/emIXOjC0N/ErvJ+sC5ixMeRB7fueH9e6my/WPZVoAopw+Xh9vxbgEqsKwEgPwukeVJAFam4Xdm/NZBMMlV3YH+OW0E2tOGZHo/EMYGSNUXm591DwChVWemqBJ4Hom5Ms3geIZdggoggUwNGl4lDDdp9OXjEP7kMFmfLNv1JULDRW1cerB6xpzyn/BMBLK1zsY9RVH1CTjSWQJwVvz/B9HDumosDPVI0fx9b7gM7LfOOTw0E4Nvn02YbUlxkEXcNN0IulgztzYxHSnd"
+
